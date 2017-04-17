@@ -1,10 +1,9 @@
 package com.sort.insertSort;
 
 /**
- *
+ * @author Joryun
  * @ClassName: ArrayInsert
  * @Description: 插入排序算法实现
- * @author Joryun
  * @date 2017年4月9日 下午10:38:17
  */
 public class ArrayInsert {
@@ -40,11 +39,16 @@ public class ArrayInsert {
         int in;
 
         for (out = 1; out < nElems; out++) {
-            for (in = out - 1; in >= 0; in++) {
 
+            long temp = a[out];     //暂时存储out所指向的值
+            in = out;       //先令in=out再向左移动，目的在于若无需移动，则将temp插入此位置即可
+
+            while (in > 0 && a[in - 1] >= temp) {
+                a[in] = a[in - 1];      //若temp小于比较的数值，则向右移
+                --in;
             }
+            a[in] = temp;   //将temp插入此位置
         }
-
     }
 
 }

@@ -1,4 +1,4 @@
-package others.alibaba;
+package alibaba;
 
 /**
  * Created by joryun on 2017/4/12.
